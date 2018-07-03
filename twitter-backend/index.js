@@ -17,13 +17,15 @@ function gotData(err, data, response){
     var tweets = data.statuses;
     let coords = [];
     for(var i = 0; i < tweets.length; i++){
+        console.log(tweets[i].text);
+        console.log(tweets[i].coordinates);
         if(tweets[i].coordinates){
             coords.push(tweets[i].coordinates);
         }
     }
     coords.forEach( coord => coord.coordinates.reverse());
-    // coords.forEach(coord => coord.coordinates);
-    // console.log(coords);
+    
+    console.log(coords);
 }
 
 //You can't tweet the same status via the console.. 
