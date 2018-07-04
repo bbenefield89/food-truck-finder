@@ -9,7 +9,7 @@ var T = new Twit(config);
 
 var params = {
     q: 'foodtruckfinde1',
-    count: 10
+    count: 15
 }
 
 T.get('search/tweets', params, gotData);
@@ -17,6 +17,7 @@ function gotData(err, data, response){
     var tweets = data.statuses;
     let coords = [];
     for(var i = 0; i < tweets.length; i++){
+        // console.log(tweets[i])
         console.log(tweets[i].text);
         console.log(tweets[i].coordinates);
         if(tweets[i].coordinates){
