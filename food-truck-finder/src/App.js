@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+// import './index.html';
 import { navbar, nav, navitem, menuitem, navdropdown } from 'react-bootstrap';
 
 class App extends Component {
@@ -31,6 +31,9 @@ class App extends Component {
                     <a class="dropdown-item" href="#">Another action</a>
                     <a class="dropdown-item" href="#">Something else here</a>
                   </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
                 </li>
               </ul>
             </div>
