@@ -6,7 +6,7 @@ var config = require('./config');
 console.log(config);
 
 var T = new Twit(config);
-
+var googleKey = gmapsKey.googleKey;
 var params = {
     q: 'foodtruckfinde1',
     count: 15

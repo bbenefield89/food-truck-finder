@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import './index.html';
 import { navbar, nav, navitem, menuitem, navdropdown } from 'react-bootstrap';
 
 class App extends Component {
