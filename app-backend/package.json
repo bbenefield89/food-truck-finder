@@ -1,0 +1,11 @@
+{
+  "name": "app-backend",
+  "version": "1.0.0",
+  "description": "schema and api for food truck app",
+  "main": "index.js",
+  "scripts": {
+    "server": "node ./server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
