@@ -89,6 +89,7 @@ function tweetEvent(eventMsg){
     }
     console.log(tweetData);
     streamData.push(tweetData);
+    //********HERE*********
     console.log(streamData);//streamData is where the tweet information will be stored, I need to export this to google maps now
     console.log(replyTo + ' ' + from);
     if(replyTo === 'foodtruckfinde1' ){
