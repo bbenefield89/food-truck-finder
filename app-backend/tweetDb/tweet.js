@@ -11,7 +11,7 @@ const Tweet = mongoose.Schema({
         required: true
     },
     createdAt: {
-        type: Date,
+        type: String,
         required: true
     },
     text: {
@@ -19,7 +19,8 @@ const Tweet = mongoose.Schema({
         required: true
     },
     profPic: {
-        type: URL
+        type: String,
+        required: true
     }
 });
 

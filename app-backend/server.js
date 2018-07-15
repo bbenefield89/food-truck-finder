@@ -16,12 +16,14 @@ server.get('/', function(req, res) {
 
 server.use('/api/tweets', tweetRouter);
 
-mongoose.connect('mongodb://localhost:27017/tweets', {}, err => {
+const port = process.env.PORT || 9001;
+mongoose.promise = global.Promise;
+
+mongoose.connect('mongodb://localhost/tweets', {}, err => {
     if (err) console.log(err);
     console.log("Mongoose is connected to your db")
 })
 
-const port = 9001;
 server.listen(port, () => {
     console.log(`\n===API is running on http://localhost:${port} ===\n`);
 });
