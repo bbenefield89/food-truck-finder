@@ -21,6 +21,11 @@ const Tweet = mongoose.Schema({
     profPic: {
         type: String,
         required: true
+    },
+    coordinates: {
+        type: [Number, Number],
+        required: false,
+        index: '2d'
     }
 });
 
