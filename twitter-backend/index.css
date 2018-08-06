@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 10px;
+    margin: 0px;
+    border: 0px;
+}
+
+section {
+    /* display: block; */
+
+}
+
+.steps {
+    text-align: justify;
+    column-count: 3;
+    margin-left: 50px;
+    column-gap: 5em;
+}
+
+.title {
+    text-align: left;
+    margin-left: 50px;
+    font-family: "Avenir";
+}
+
+p, h4 {
+    text-align: left;
+    font-family: "Avenir";
+}
+
+.icon {
+    height: 50px;
+}
+
+.mapRow {
+    text-align: justify;
+    /* column-count: 3; */
+    margin-left: 50px;
+}
+
+.inline {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+}

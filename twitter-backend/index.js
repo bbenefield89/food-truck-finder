@@ -115,5 +115,3 @@ function tweetIt(txt){
         console.log("hello there, looks like we've got engagement");
     }
 }
-
- 

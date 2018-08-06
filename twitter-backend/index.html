@@ -2,6 +2,7 @@
 <script type='text/javascript' src='config.js'></script>
 
 <html lang='en'>
+<link rel="stylesheet" href="./index.css">
 
 <head>
     <title>
@@ -9,84 +10,129 @@
     </title>
     <style>
         #map {
-            height: 400px;
-            width: 100%;
+            height: 350px;
+            width: 60%;
         }
     </style>
 </head>
 
-<body>
-    <h1>Your favorite food trucks!</h1>
-    <div id="map"></div>
-    <script>
-        function initMap() {
-            //map options
-            var options = {
-                zoom: 10,
-                center: { lat: 37.784425, lng: -122.4057701 }
-            }
-            //new map
-            var map = new google.maps.Map(document.getElementById('map'), options);
+<center>
 
-            //markers
-            let markers = [
-                {
-                    coords: { lat: 37.7955, lng: -122.4183 },
-                    iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                    content: '<h1>SF, CA</h1>'
-                },
-                {
-                    coords: { lat: 37.8955, lng: -122.3183 },
-                    iconImage: 'https://pbs.twimg.com/profile_images/564844806875402241/mqCRFwrD_normal.jpeg',
-                    content: '<h1>Oakland, CA</h1>'
-                },
-                {
-                    coords: { lat: 37.6955, lng: -122.2183 },
-                    content: '<h1>Berkeley, CA</h1>'
-                }
-            ]
+    <body>
+        <h1 class='title'>Your favorite food trucks!</h1>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <section class='mapRow, inline'>
+            <h4>Top Cities: </h4>
+            <ul>
+                <li>Chicago</li>
+                <li>NYC</li>
+                <li>ATX</li>
+                <li>Salt Lake City</li>
+            </ul>
 
-            //loop through markers
-            for (let i = 0; i < markers.length; i++) {
-                addMarker(markers[i]);
-            }
+            <div class='inline' id="map">
+                <script>
+                    function initMap() {
+                        //map options
+                        var options = {
+                            zoom: 10,
+                            center: { lat: 37.784425, lng: -122.4057701 }
+                        }
+                        //new map
+                        var map = new google.maps.Map(document.getElementById('map'), options);
 
-            //add market function
-            function addMarker(props) {
-                let marker = new google.maps.Marker({
-                    position: props.coords,
-                    map: map,
-                    size: new google.maps.Size(12, 12),
-                });
-                console.log(props.coords);
+                        //markers
+                        let markers = [
+                            {
+                                coords: { lat: 37.7955, lng: -122.4183 },
+                                iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                                content: '<h1>SF, CA</h1>'
+                            },
+                            {
+                                coords: { lat: 37.8955, lng: -122.3183 },
+                                iconImage: 'https://pbs.twimg.com/profile_images/564844806875402241/mqCRFwrD_normal.jpeg',
+                                content: '<h1>Oakland, CA</h1>'
+                            },
+                            {
+                                coords: { lat: 37.6955, lng: -122.2183 },
+                                content: '<h1>Berkeley, CA</h1>'
+                            }
+                        ]
 
-                if (props.iconImage) {
-                    console.log(props.iconImage);
-                    marker.setIcon(
-                        {
-                            url: props.iconImage,
-                            scaledSize: new google.maps.Size(15, 15)
-                        });
-                    // icon: {
-                    //   url: props.iconImage,
-                    //   size: new google.maps.Size(20, 32)
-                    // }
-                }
+                        //loop through markers
+                        for (let i = 0; i < markers.length; i++) {
+                            addMarker(markers[i]);
+                        }
 
-                if (props.content) {
-                    let infoWindow = new google.maps.InfoWindow({
-                        content: props.content
-                    })
-                    marker.addListener('click', function () {
-                        infoWindow.open(map, marker);
-                    });
-                }
-            }
-        }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCyXt35OKilVBrqDTkNHWFVUVyWryRqPA&callback=initMap">
-    </script>
+                        //add market function
+                        function addMarker(props) {
+                            let marker = new google.maps.Marker({
+                                position: props.coords,
+                                map: map,
+                                size: new google.maps.Size(12, 12),
+                            });
+                            console.log(props.coords);
 
-</body>
+                            if (props.iconImage) {
+                                console.log(props.iconImage);
+                                marker.setIcon(
+                                    {
+                                        url: props.iconImage,
+                                        scaledSize: new google.maps.Size(15, 15)
+                                    });
+                                // icon: {
+                                //   url: props.iconImage,
+                                //   size: new google.maps.Size(20, 32)
+                                // }
+                            }
+
+                            if (props.content) {
+                                let infoWindow = new google.maps.InfoWindow({
+                                    content: props.content
+                                })
+                                marker.addListener('click', function () {
+                                    infoWindow.open(map, marker);
+                                });
+                            }
+                        }
+                    }
+                </script>
+            </div>
+            <form class='inline'>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+        </section>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCyXt35OKilVBrqDTkNHWFVUVyWryRqPA&callback=initMap">
+        </script>
+
+    </body>
+</center>
+<section class='steps'>
+    <h4>Step 1: </h4>
+    <p>Sign up via Twitter</p>
+    <img class='icon' src="../Twitter All Brand Resources/Twitter Logos/Twitter_Logo_Blue/Twitter_Logo_Blue.png">
+    <h4>Step 2: </h4>
+    <p>Tag your location to a tweet </p>
+    <img class='icon' src="../Twitter All Brand Resources/Twitter Logos/Twitter_Logo_Blue/location-on-map.png">
+    <h4>Step 3: </h4>
+    <p>Let customers see you on our map in real time</p>
+    <img class='icon' src="../Twitter All Brand Resources/Twitter Logos/Twitter_Logo_Blue/chef-toque-and-mustache.png">
+</section>
 
 </html>
