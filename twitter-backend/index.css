@@ -40,11 +40,13 @@ p, h4 {
     margin-left: 50px;
     justify-content: center;
     flex: auto;
+    overflow: auto;
 }
 
 .form {
     width: 15%;
     margin-left: 50px;
+    /* float: right; */
 }
 
 .heading {
