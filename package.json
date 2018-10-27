@@ -8,7 +8,7 @@
     "start": "node index.js",
     "server": "node server.js",
     "deploy": "surge",
-    "dist": "surge --domain moldy-rock.surge.sh"
+    "dist": "surge --domain food-truck-finder.surge.sh"
   },
   "author": "",
   "license": "ISC",
