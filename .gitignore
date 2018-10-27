@@ -1,6 +1,6 @@
 config.js
 
-twitter-backend/node_modules
+/node_modules
 app-backend/node_modules
 food-truck-finder/node_modules
 twitter-backend/app-backend
