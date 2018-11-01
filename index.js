@@ -66,7 +66,7 @@ function gotData(err, data, response){
 // };
 
 //setting up a user stream
-let stream = T.stream('user');
+// let stream = T.stream('user');
 // //anytime someone follows our account
 // stream.on('follow', followed);
 
@@ -76,29 +76,29 @@ let stream = T.stream('user');
 //     tweetIt('@' + screenName + ' thanks for following, we will share food truck locations with you!');
 // }
 
-let streamData = [];
+// let streamData = [];
 
-stream.on('tweet', tweetEvent);
-function tweetEvent(eventMsg){
-    let replyTo = eventMsg.in_reply_to_screen_name;
-    let text = eventMsg.text;
-    let from = eventMsg.user.screen_name;
-    let tweetData = [eventMsg.user.name, eventMsg.user.screen_name, eventMsg.created_at, eventMsg.text, eventMsg.user.profile_image_url];
-    if(eventMsg.geo){
-        tweetData.push(eventMsg.geo.coordinates);
-    }
-    console.log(tweetData);
-    streamData.push(tweetData);
-    //********HERE*********
-    console.log(streamData);//streamData is where the tweet information will be stored, I need to export this to google maps now
-    console.log(replyTo + ' ' + from);
-    if(replyTo === 'foodtruckfinde1' ){
-        console.log("hello there, looks like we've got engagement");
-        // console.log(eventMsg);
-        let newTweet = '@' + from + ' thank you for signing up and sharing your food trucks location!';
-        tweetIt(newTweet);
-    }
-}
+// stream.on('tweet', tweetEvent);
+// function tweetEvent(eventMsg){
+//     let replyTo = eventMsg.in_reply_to_screen_name;
+//     let text = eventMsg.text;
+//     let from = eventMsg.user.screen_name;
+//     let tweetData = [eventMsg.user.name, eventMsg.user.screen_name, eventMsg.created_at, eventMsg.text, eventMsg.user.profile_image_url];
+//     if(eventMsg.geo){
+//         tweetData.push(eventMsg.geo.coordinates);
+//     }
+//     console.log(tweetData);
+//     streamData.push(tweetData);
+//     //********HERE*********
+//     console.log(streamData);//streamData is where the tweet information will be stored, I need to export this to google maps now
+//     console.log(replyTo + ' ' + from);
+//     if(replyTo === 'foodtruckfinde1' ){
+//         console.log("hello there, looks like we've got engagement");
+//         // console.log(eventMsg);
+//         let newTweet = '@' + from + ' thank you for signing up and sharing your food trucks location!';
+//         tweetIt(newTweet);
+//     }
+// }
 
 function tweetIt(txt){
     let tweet = {
