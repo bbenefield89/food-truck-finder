@@ -50,22 +50,22 @@ function gotData(err, data, response){
     // console.log(finData);
 }
 
-//You can't tweet the same status via the console.. 
-//I guess it's to prevent spam!
-// let tweet = {
-//     status: 'tweeting from the console via twitter api'
-// }
-// T.post('statuses/update', tweet, tweeted);
+// You can't tweet the same status via the console.. 
+// I guess it's to prevent spam!
+let tweet = {
+    status: 'tweeting from the console via twitter api'
+}
+T.post('statuses/update', tweet, tweeted);
 
-// function tweeted(err, data, response){
-//     if(err){
-//         console.log('something went wrong, try again');
-//     } else {
-//         console.log('it worked!');
-//     }
-// };
+function tweeted(err, data, response){
+    if(err){
+        console.log('something went wrong, try again');
+    } else {
+        console.log('it worked!');
+    }
+};
 
-//setting up a user stream
+// setting up a user stream
 // let stream = T.stream('user');
 // //anytime someone follows our account
 // stream.on('follow', followed);

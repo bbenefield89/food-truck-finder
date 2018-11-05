@@ -4,6 +4,7 @@
     padding-top: 10px;
     margin: 0px;
     border: 0px;
+    justify-content: center;
 }
 
 section {
@@ -19,7 +20,7 @@ section {
 }
 
 .title {
-    text-align: left;
+    text-align: center;
     margin-left: 50px;
     font-family: "Avenir";
 }
@@ -50,6 +51,6 @@ p, h4 {
 }
 
 .heading {
-    
+    justify-content: center;
     
 }
