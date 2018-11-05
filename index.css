@@ -8,9 +8,9 @@
 }
 
 section {
-    /* display: block; */
+    display: block;
 
-}
+} 
 
 .steps {
     text-align: justify;
